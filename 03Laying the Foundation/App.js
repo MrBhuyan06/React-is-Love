@@ -20,12 +20,29 @@
 import React from "react";
 import ReactDOM from "react-dom/client.js";
 
-const h1 = React.createElement(
-  "h1",
-  { className: "heading" },
-  "React is Love and i love React❤️"
-);
-console.log(h1);
+// ReactElement=>object=>Html(dom)
+
+//jsx=>ReactElemnt=>Object=>Html(dom)
+
+//componets are class and functional based
+
+// const h1 = React.createElement(
+//   "h1",
+//   { className: "heading", key: "h1" },
+//   "React is Love "
+// );
+const Tittle = () => <h1 key="h1">React is Love</h1>;
+// console.log(h1);
+
+const HeadinCompents = () => {
+  return (
+    <div>
+      <Tittle />
+      <h1 key="h2">Hello From Functional compents</h1>
+      <h2 key="h3">Hello World</h2>
+    </div>
+  );
+};
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
-root.render(h1);
+root.render(<HeadinCompents />);
