@@ -1,0 +1,14 @@
+{
+  "name": "02igniting-ouapp",
+  "version": "1.0.0",
+  "description": "This is our second class on Bundlers",
+  "main": "App.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Abhishek",
+  "license": "ISC",
+  "devDependencies": {
+    "parcel": "^2.8.3"
+  }
+}
