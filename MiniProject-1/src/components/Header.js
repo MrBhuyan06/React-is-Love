@@ -2,9 +2,16 @@ import "./Header.css";
 
 const Header = () => {
   return (
-    <div>
-      <h1 className="h1-demo">Hello</h1>
-    </div>
+    <header className="header">
+      <div className="left-logo">
+        <h2>Profile Finder</h2>
+      </div>
+      <ul className="right-nav-list">
+        <li>Home</li>
+        <li>contact</li>
+        <li>About us</li>
+      </ul>
+    </header>
   );
 };
 
