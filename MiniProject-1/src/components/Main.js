@@ -6,14 +6,16 @@ import { profileList } from "../config.js";
 // console.log(profileList);
 
 const filterData = function (searchText, AllProfile) {
-  AllProfile.filter((profile) => {
+  const profile = AllProfile.filter((profile) => {
     return profile.data.name.toLowerCase().includes(searchText);
   });
+  return profile;
 };
 
 const Main = () => {
   const [searchText, setSearch] = useState("");
   const [AllProfile, setAllProfile] = useState(profileList);
+  const [FillterProfile, setFilterAllProfile] = useState(profileList);
   console.log(AllProfile);
 
   return (
@@ -31,16 +33,20 @@ const Main = () => {
         <button
           onClick={() => {
             //fliterProfile will call with name of person as one para and list of profile in ine para
-            const profileData = filterData(searchText, AllProfile);
+            const profileData = filterData(searchText, FillterProfile);
             setAllProfile(profileData);
           }}
         >
           Search
         </button>
         <div className="profile-card-section">
-          {AllProfile.map((profile) => {
-            return <ProfileCard {...profile.data} />;
-          })}
+          {AllProfile.length === 0 ? (
+            <h1>No Profile Found </h1>
+          ) : (
+            AllProfile.map((profile) => {
+              return <ProfileCard {...profile.data} />;
+            })
+          )}
         </div>
       </div>
     </div>
