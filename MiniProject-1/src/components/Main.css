@@ -4,3 +4,11 @@
   margin: 0 auto;
   margin-top: 10px;
 }
+.profile-card-section {
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: center; */
+  gap: 10px;
+}
+/* @media screen (max-width: 350) {
+} */
