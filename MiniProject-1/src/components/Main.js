@@ -16,7 +16,7 @@ const Main = () => {
   const [searchText, setSearch] = useState("");
   const [AllProfile, setAllProfile] = useState(profileList);
   const [FillterProfile, setFilterAllProfile] = useState(profileList);
-  console.log(AllProfile);
+  // console.log(AllProfile);
 
   return (
     <div className="Main">
@@ -35,6 +35,7 @@ const Main = () => {
             //fliterProfile will call with name of person as one para and list of profile in ine para
             const profileData = filterData(searchText, FillterProfile);
             setAllProfile(profileData);
+            console.log(AllProfile);
           }}
         >
           Search
