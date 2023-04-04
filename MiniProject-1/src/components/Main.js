@@ -17,7 +17,7 @@ const Main = () => {
   const [AllProfile, setAllProfile] = useState(profileList);
   const [FillterProfile, setFilterAllProfile] = useState(profileList);
   // console.log(AllProfile);
-
+  console.log("render()");
   return (
     <div className="Main">
       <div className="search-container">
@@ -45,7 +45,7 @@ const Main = () => {
             <h1>No Profile Found </h1>
           ) : (
             AllProfile.map((profile) => {
-              return <ProfileCard {...profile.data} />;
+              return <ProfileCard {...profile.data} key={profile.data.id} />;
             })
           )}
         </div>

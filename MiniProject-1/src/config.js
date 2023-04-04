@@ -7,6 +7,7 @@ export const profileList = [
       age: 22,
       job: "Software Engineer",
       Skill: ["React", "Node"],
+      id: 01,
     },
   },
   {
@@ -17,6 +18,7 @@ export const profileList = [
       age: 23,
       job: "Student",
       Skill: ["React", "Node"],
+      id: 02,
     },
   },
   {
@@ -27,6 +29,7 @@ export const profileList = [
       age: 30,
       job: "Teacher",
       Skill: ["React", "Node", "Web App Dev"],
+      id: 03,
     },
   },
   {
@@ -37,6 +40,7 @@ export const profileList = [
       age: 23,
       job: "student",
       Skill: ["React", "Node"],
+      id: 05,
     },
   },
   {
@@ -48,6 +52,7 @@ export const profileList = [
       age: 23,
       job: "Student",
       Skill: ["React", "Node"],
+      id: 06,
     },
   },
   {
@@ -58,6 +63,7 @@ export const profileList = [
       age: 30,
       job: "Teacher",
       Skill: ["Js", "Node"],
+      id: 07,
     },
   },
   {
@@ -68,6 +74,7 @@ export const profileList = [
       age: 27,
       job: "Teacher",
       Skill: ["Namaste React", "Namaste JavaScript"],
+      id: 08,
     },
   },
 ];
