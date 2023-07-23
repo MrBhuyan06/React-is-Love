@@ -1,8 +1,11 @@
 import React from "react";
 import { useContext } from "react";
 import { User } from "../context/stateProvider.js";
+import demoContext from "../context/democontext.js";
 const Body = () => {
   const { user, setUser } = useContext(User);
+  const [{ name }] = useContext(demoContext);
+  console.log(name);
 
   console.log(user);
   return (
