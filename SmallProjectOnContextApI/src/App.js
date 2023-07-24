@@ -5,13 +5,18 @@ import Footer from "./components/Footer.js";
 import Header from "./components/Header.js";
 import Body from "./components/Body.js";
 import ItemCart from "./components/ItemCart.js";
+import Provider from "./context/Provider.js";
+import InistialState from "./context/InistialState.js";
+import reducers from "./context/reducers.js";
 
 const App = () => {
   return (
     <>
-      <Header />
-      <Outlet />
-      <Footer />
+      <Provider iniState={InistialState} reducer={reducers}>
+        <Header />
+        <Outlet />
+        <Footer />
+      </Provider>
     </>
   );
 };

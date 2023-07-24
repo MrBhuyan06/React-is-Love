@@ -1,10 +1,27 @@
+import { useStateValue } from "../context/Provider.js";
+
 const Header = () => {
+  console.log(useStateValue());
+  const [{ userInfo }, dispatch] = useStateValue();
+  //   console.log(dispatch);
+  //   console.log(userInfo);
   return (
     <div className=" 0 navbar  bg-gray-100">
       <div className="flex-1">
         <a className="btn btn-ghost normal-case text-xl">Demo Header</a>
       </div>
       <div className="flex-none">
+        <input
+          type="text"
+          className="border-2"
+          onChange={(e) =>
+            dispatch({
+              type: "SET_USER",
+              payload: e.target.value,
+            })
+          }
+        />
+        <h3>{userInfo.name}</h3>
         <div className="dropdown dropdown-end">
           <label tabIndex={0} className="btn btn-ghost btn-circle">
             <div className="indicator">
