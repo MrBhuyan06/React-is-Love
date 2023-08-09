@@ -4,5 +4,6 @@ const InistialState = {
   userInfo: {
     name: "AbhishekBhuyan",
   },
+  cart: [],
 };
 export default InistialState;

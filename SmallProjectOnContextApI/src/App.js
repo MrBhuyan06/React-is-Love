@@ -8,15 +8,15 @@ import ItemCart from "./components/ItemCart.js";
 import Provider from "./context/Provider.js";
 import InistialState from "./context/InistialState.js";
 import reducers from "./context/reducers.js";
-
+import About from "./components/About.js";
 const App = () => {
   return (
     <>
       <Provider iniState={InistialState} reducer={reducers}>
         <Header />
         <Outlet />
-        <Footer />
       </Provider>
+      <Footer />
     </>
   );
 };
@@ -34,6 +34,10 @@ const appRouter = createBrowserRouter([
       {
         path: "/",
         element: <Body />,
+      },
+      {
+        path: "/about",
+        element: <About />,
       },
     ],
   },

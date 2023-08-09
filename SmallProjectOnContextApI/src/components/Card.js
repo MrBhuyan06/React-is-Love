@@ -1,19 +1,44 @@
 import React from "react";
-
-const Card = () => {
+import { useStateValue } from "../context/Provider.js";
+const Card = ({ res }) => {
+  const {
+    state: { cart },
+    dispatch,
+  } = useStateValue();
   return (
     <div className="card card-compact w-96 bg-base-100 shadow-xl">
-      <figure>
-        <img
-          src="/images/stock/photo-1606107557195-0e29a4b5b4aa.jpg"
-          alt="Shoes"
-        />
+      <figure className="w-full">
+        <img src={res.cover} className="w-28" alt="Shoes" />
       </figure>
       <div className="card-body">
-        <h2 className="card-title">Shoes!</h2>
-        <p>If a dog chews shoes whose shoes does he choose?</p>
+        <h2 className="card-title">{res.tittle}</h2>
+
         <div className="card-actions justify-end">
-          <button className="btn btn-primary">Buy Now</button>
+          {cart.some((c) => c.id === res.id) ? (
+            <button
+              onClick={() => {
+                dispatch({
+                  type: "ADD_TO_CART",
+                  payload: res,
+                });
+              }}
+              className="btn btn-primary"
+            >
+              Remove
+            </button>
+          ) : (
+            <button
+              onClick={() => {
+                dispatch({
+                  type: "ADD_TO_CART",
+                  payload: res,
+                });
+              }}
+              className="btn btn-primary"
+            >
+              AddCart
+            </button>
+          )}
         </div>
       </div>
     </div>

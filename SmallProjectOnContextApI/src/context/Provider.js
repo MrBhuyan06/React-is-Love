@@ -3,8 +3,9 @@ import React, { createContext, useContext, useReducer, useState } from "react";
 let ContextData = createContext();
 
 const Provider = ({ children, reducer, iniState }) => {
+  const [state, dispatch] = useReducer(reducer, iniState);
   return (
-    <ContextData.Provider value={useReducer(reducer, iniState)}>
+    <ContextData.Provider value={{ state, dispatch }}>
       {children}
     </ContextData.Provider>
   );
