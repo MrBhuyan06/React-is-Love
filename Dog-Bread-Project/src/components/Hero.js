@@ -14,6 +14,19 @@ const Hero = () => {
     });
     return filterDog;
   }
+  function filtersort(sortname, alldog) {
+    // console.log(alldog);
+    let sortedProdect = [...allDog];
+    console.log(sortedProdect);
+
+    sortedProdect = sortedProdect.sort((a, b) =>
+      //   console.log(a.price);
+      sortname == "lowtohigh" ? a.price - b.price : b.price - a.price
+    );
+    // console.log(sortedProdect);
+    // return sortedProdect;s
+    setAllFilterDog(sortedProdect);
+  }
 
   //   async function getDog() {
   //     const stream = await fetch("https://dog.ceo/api/breed/hound/images");
@@ -28,6 +41,7 @@ const Hero = () => {
   //   if (!allDog.length) {
   //     return;
   //   }
+  console.log(allDog);
   return (
     <main>
       <div className="  w-1/2 mx-auto mt-10  p-4 bg-gray-100 rounded-md ">
@@ -50,10 +64,21 @@ const Hero = () => {
           </button>
         </div>
         <div className="flex items-center justify-center gap-2">
-          <button className="bg-red-600 p-2 mt-1 rounded-md">
+          <button
+            className="bg-red-600 p-2 mt-1 rounded-md"
+            onClick={() => {
+              filtersort("lowtohigh", allDog);
+              //   console.log(sortProductAs);
+            }}
+          >
             Low to High
           </button>
-          <button className="bg-blue-600 p-2 mt-1 rounded-md">
+          <button
+            className="bg-blue-600 p-2 mt-1 rounded-md"
+            onClick={() => {
+              filtersort("hightolow", allDog);
+            }}
+          >
             High to Low
           </button>
         </div>
