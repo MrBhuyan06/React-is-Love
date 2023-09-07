@@ -84,7 +84,7 @@ const Hero = () => {
         </div>
         <div className="flex flex-wrap items-center justify-center gap-2">
           {filterDog.map((dog, id) => {
-            return <CatCard key={id} {...dog} />;
+            return <CatCard key={id} info={dog} />;
           })}
         </div>
       </div>
